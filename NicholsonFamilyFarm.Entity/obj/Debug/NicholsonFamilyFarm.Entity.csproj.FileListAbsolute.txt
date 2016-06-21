@@ -1,0 +1,10 @@
+c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\bin\Debug\NicholsonFamilyFarm.Entity.dll.config
+c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\bin\Debug\NicholsonFamilyFarm.Entity.dll
+c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\bin\Debug\NicholsonFamilyFarm.Entity.pdb
+c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\bin\Debug\EntityFramework.dll
+c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\bin\Debug\EntityFramework.xml
+c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\obj\Debug\NicholsonFamilyFarm.Entity.csprojResolveAssemblyReference.cache
+c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\obj\Debug\NicholsonFamilyFarm.Entity.dll
+c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\obj\Debug\NicholsonFamilyFarm.Entity.pdb
