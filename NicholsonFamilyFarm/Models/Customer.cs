@@ -7,13 +7,19 @@ namespace NicholsonFamilyFarm.Models
 {
     public class Customer
     {
-        public int CustomerId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailId { get; set; }
-        public string PhoneNo { get; set; }
-        public string FacebookId { get; set; }
-        public Account CreatedBy { get; set; }
-        public List<Order> Orders { get; set; }
+        public int id { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string fullName
+        {
+            get
+            {
+                return this.lastName + ", " + this.firstName;
+            }
+        }
+        public string emailId { get; set; }
+        public string phoneNo { get; set; }
+        public string address { get; set; }
+        public List<Order> orders { get; set; }
     }
 }

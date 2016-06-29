@@ -1,0 +1,91 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add New Order</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    
+                    <form class="form-horizontal" novalidate>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"># of Dozens (dz)</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" ng-model="order.noOfEggs" placeholder="Enter # of Dozens">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                           
+                            <label class="col-sm-3 control-label">Order Date:</label>
+                            <div class="col-sm-6">
+                                <p class="input-group">
+                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="order.orderDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true"
+                                           close-text="Close" alt-input-formats="altInputFormats" ng-blur="getDeliveryDate()" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-primary" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Delivery Date:</label>
+                            <div class="col-sm-6">
+                                <p class="input-group">
+                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="order.deliveryDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true"
+                                           close-text="Close" alt-input-formats="altInputFormats" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-primary" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-3 control-label">Phone #</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" ng-model="order.customer.phoneNo" placeholder="Enter Phone #" ng-blur="retrieveCust()">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">First Name</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" ng-model="order.customer.firstName" placeholder="Enter Customer's First Name" ng-disabled="IsCustomerExists">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Last Name</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" ng-model="order.customer.lastName" placeholder="Enter Customer's Last Name" ng-disabled="IsCustomerExists">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" ng-model="order.customer.emailId" placeholder="Enter Email" ng-disabled="IsCustomerExists">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-3 control-label">Address</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="order.customer.address"  placeholder="Enter Address" ng-disabled="IsCustomerExists">
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary" ng-click="saveOrder()">Place Order</button>&nbsp;
+                                <button type="submit" class="btn btn-primary">Clear</button> &nbsp;
+                                <a class="btn btn-primary" href="#/listOrders" >List Orders</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                </div>
+           </div>
+        </div>
+
+    </div>
+</div>

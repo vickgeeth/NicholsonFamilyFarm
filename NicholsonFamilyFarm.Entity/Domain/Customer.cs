@@ -20,15 +20,14 @@ namespace NicholsonFamilyFarm.Entity.Domain
             this.Orders = new HashSet<Order>();
         }
     
-        public int CustomerId { get; set; }
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string EmailId { get; set; }
+        public string Address { get; set; }
         public string PhoneNo { get; set; }
-        public string FaceBookId { get; set; }
-        public int AccountId { get; set; }
+        public string Pin { get; set; }
+        public string EmailId { get; set; }
     
-        public virtual Account Account { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
     }

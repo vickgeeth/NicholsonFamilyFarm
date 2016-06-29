@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'c:\users\vickg\documents\visual studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\Domain\NicholsonFarmDO.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\vickg\Documents\Visual Studio 2015\Projects\NicholsonFamilyFarm\NicholsonFamilyFarm.Entity\Domain\NicholsonFamilyFarm.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

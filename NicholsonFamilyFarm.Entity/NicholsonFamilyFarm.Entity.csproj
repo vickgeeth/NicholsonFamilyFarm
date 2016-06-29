@@ -52,60 +52,56 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Domain\Account.cs">
-      <DependentUpon>NicholsonFarmDO.tt</DependentUpon>
-    </Compile>
     <Compile Include="Domain\Customer.cs">
-      <DependentUpon>NicholsonFarmDO.tt</DependentUpon>
+      <DependentUpon>NicholsonFamilyFarm.tt</DependentUpon>
     </Compile>
     <Compile Include="Domain\Inventory.cs">
-      <DependentUpon>NicholsonFarmDO.tt</DependentUpon>
+      <DependentUpon>NicholsonFamilyFarm.tt</DependentUpon>
     </Compile>
-    <Compile Include="Domain\NicholsonFarmDO.Context.cs">
+    <Compile Include="Domain\NicholsonFamilyFarm.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NicholsonFarmDO.Context.tt</DependentUpon>
+      <DependentUpon>NicholsonFamilyFarm.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Domain\NicholsonFarmDO.cs">
+    <Compile Include="Domain\NicholsonFamilyFarm.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NicholsonFarmDO.tt</DependentUpon>
+      <DependentUpon>NicholsonFamilyFarm.tt</DependentUpon>
     </Compile>
-    <Compile Include="Domain\NicholsonFarmDO.Designer.cs">
+    <Compile Include="Domain\NicholsonFamilyFarm.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NicholsonFarmDO.edmx</DependentUpon>
+      <DependentUpon>NicholsonFamilyFarm.edmx</DependentUpon>
     </Compile>
     <Compile Include="Domain\Order.cs">
-      <DependentUpon>NicholsonFarmDO.tt</DependentUpon>
+      <DependentUpon>NicholsonFamilyFarm.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Domain\NicholsonFarmDO.edmx">
+    <EntityDeploy Include="Domain\NicholsonFamilyFarm.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NicholsonFarmDO.Designer.cs</LastGenOutput>
+      <LastGenOutput>NicholsonFamilyFarm.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Domain\NicholsonFarmDO.edmx.diagram">
-      <DependentUpon>NicholsonFarmDO.edmx</DependentUpon>
+    <None Include="Domain\NicholsonFamilyFarm.edmx.diagram">
+      <DependentUpon>NicholsonFamilyFarm.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Domain\NicholsonFarmDO.Context.tt">
+    <Content Include="Domain\NicholsonFamilyFarm.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NicholsonFarmDO.edmx</DependentUpon>
-      <LastGenOutput>NicholsonFarmDO.Context.cs</LastGenOutput>
+      <DependentUpon>NicholsonFamilyFarm.edmx</DependentUpon>
+      <LastGenOutput>NicholsonFamilyFarm.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Domain\NicholsonFarmDO.tt">
+    <Content Include="Domain\NicholsonFamilyFarm.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NicholsonFarmDO.edmx</DependentUpon>
-      <LastGenOutput>NicholsonFarmDO.cs</LastGenOutput>
+      <DependentUpon>NicholsonFamilyFarm.edmx</DependentUpon>
+      <LastGenOutput>NicholsonFamilyFarm.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

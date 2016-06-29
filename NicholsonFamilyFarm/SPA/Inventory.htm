@@ -1,0 +1,53 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Inventory</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-10">
+
+                    <form class="form-horizontal" novalidate>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Collection Date</label>
+                            <div class="col-sm-3">
+                                <p class="input-group">
+                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="inventory.collectionDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true"
+                                           close-text="Close" alt-input-formats="altInputFormats" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-primary" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"># Of Eggs</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="noOfEggs" ng-model="inventory.noOfEggs" placeholder="# of Eggs" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary" ng-click="add()">Add</button>
+                                <button type="submit" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div ui-grid="gridOptions" class="myGrid"></div>
+    </div>
+</div>

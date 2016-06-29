@@ -235,6 +235,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\ExpenseController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Global.asax.cs">
@@ -242,7 +243,9 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -286,8 +289,22 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Custom\Controllers\ExpenseController.js" />
+    <Content Include="Scripts\Custom\Controllers\InventoryController.js" />
+    <Content Include="Scripts\Custom\Controllers\OrderController.js" />
+    <Content Include="Scripts\Custom\Controllers\OrdersController.js" />
+    <Content Include="Scripts\Custom\Controllers\ReportController.js" />
     <Content Include="Scripts\Custom\main.js" />
+    <Content Include="Scripts\Custom\Services\CustomerService.js" />
+    <Content Include="Scripts\Custom\Services\ExpenseService.js" />
+    <Content Include="Scripts\Custom\Services\InventoryService.js" />
+    <Content Include="Scripts\Custom\Services\OrderService.js" />
+    <Content Include="Scripts\Custom\Services\ServiceFactory.js" />
+    <Content Include="Scripts\FileAPI.flash.swf" />
+    <Content Include="Scripts\FileAPI.js" />
+    <Content Include="Scripts\FileAPI.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -296,9 +313,20 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ng-file-upload-all.js" />
+    <Content Include="Scripts\ng-file-upload-all.min.js" />
+    <Content Include="Scripts\ng-file-upload-shim.js" />
+    <Content Include="Scripts\ng-file-upload-shim.min.js" />
+    <Content Include="Scripts\ng-file-upload.js" />
+    <Content Include="Scripts\ng-file-upload.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\ui-grid.min.js" />
+    <Content Include="SPA\AddOrder.htm" />
+    <Content Include="SPA\Expense.htm" />
+    <Content Include="SPA\Inventory.htm" />
+    <Content Include="SPA\InventoryReport.htm" />
+    <Content Include="SPA\Orders.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

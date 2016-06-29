@@ -16,14 +16,12 @@ namespace NicholsonFamilyFarm.Entity.Domain
     {
         public int OrderId { get; set; }
         public System.DateTime OrderDate { get; set; }
-        public System.DateTime DeliveryDate { get; set; }
-        public int NoOfEggs { get; set; }
-        public decimal Amount { get; set; }
+        public Nullable<System.DateTime> DeliveryDate { get; set; }
         public string Status { get; set; }
-        public int CustomerId { get; set; }
-        public int AccountId { get; set; }
+        public int NoOfEggs { get; set; }
+        public Nullable<int> CustomerId { get; set; }
+        public Nullable<decimal> Amount { get; set; }
     
-        public virtual Account Account { get; set; }
         public virtual Customer Customer { get; set; }
     }
 }

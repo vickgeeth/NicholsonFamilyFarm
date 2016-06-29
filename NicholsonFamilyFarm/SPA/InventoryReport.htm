@@ -1,0 +1,46 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <form class="form-inline" novalidate>
+            <div class="form-group">
+                <label>From Date:</label>
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true"
+                           close-text="Close" alt-input-formats="altInputFormats" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="form-group">
+                <label>To Date:</label>
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true"
+                           close-text="Close" alt-input-formats="altInputFormats" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" ng-click="generateReport()">Generate Report</button>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<br />
+<div class="row">
+    
+    <div class="col-md-8">
+        <canvas class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series"> </canvas>
+    </div>
+    <div class="col-md-4">
+        <canvas class="chart chart-pie" chart-data="data" chart-labels="labels" chart-series="series"> </canvas>
+    </div>
+</div>
+<div class="row">
+    <!--<div class="col-md-12">
+        <canvas class="chart chart-pie" chart-data="data" chart-labels="labels" chart-series="series"> </canvas>
+    </div>-->
+</div>

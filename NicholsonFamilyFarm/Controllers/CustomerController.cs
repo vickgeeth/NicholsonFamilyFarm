@@ -12,10 +12,44 @@ namespace NicholsonFamilyFarm.Controllers
     public class CustomerController : ApiController
     {
         [HttpGet]
+        public HttpResponseMessage Retrieve(string phoneNo) {
+            using (var context = new domain.NicholsonFamilyFarmEntities()) {
+                var dCustomer = context.Customers.FirstOrDefault(x => x.PhoneNo == phoneNo.Trim());
+                if (dCustomer != null)
+                {
+                    var orders = new List<Order>();
+                    dCustomer.Orders.ToList().ForEach(x => {
+                        orders.Add(new Order {
+                            id = x.OrderId,
+                            orderDate = x.OrderDate,
+                            deliveryDate = x.DeliveryDate,
+                            amount = x.Amount,
+                            noOfEggs = x.NoOfEggs,
+                            status = x.Status == "N" ? "Pending" : "Delivered"
+                        });
+                    });
+                    return Request.CreateResponse(HttpStatusCode.OK, new Customer
+                    {
+                        emailId = dCustomer.EmailId,
+                        firstName = dCustomer.FirstName,
+                        lastName = dCustomer.LastName,
+                        id = dCustomer.Id,
+                        phoneNo = dCustomer.PhoneNo,
+                        address = dCustomer.Address,
+                        orders = orders
+                      
+                    });
+                }
+                else {
+                    return Request.CreateResponse(HttpStatusCode.OK, new Customer());
+                }
+            }
+        }
+        /*[HttpGet]
         public HttpResponseMessage Retrieve(string phoneNo, string emailId, string facebookId, string lastName, string firstName)
         {
             var customers = new List<Customer>();
-            using (var context = new domain.NicholsonFarmEntities())
+            using (var context = new domain.())
             {
                 var dCustomers = context.Customers.
                     Where(x => x.PhoneNo == phoneNo || x.EmailId == emailId ||
@@ -103,6 +137,6 @@ namespace NicholsonFamilyFarm.Controllers
             }
 
             return Request.CreateResponse(HttpStatusCode.OK, "Customer details are Updated successfully");
-        }
+        } */
     }
 }

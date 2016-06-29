@@ -5,16 +5,16 @@ using System.Web;
 
 namespace NicholsonFamilyFarm.Models
 {
-    public class Order
+    public class Order 
     {
-        public int OrderId { get; set; }
-        public DateTime OrderDate { get; set; }
-        public DateTime DeliveryDate { get; set; }
-        public int NoOfEggs { get; set; }
-        public decimal Amount { get; set; }
-        public string Status { get; set; }
-        public Customer Customer { get; set; }
-        public Account CreatedBy { get; set; }
+        public int id { get; set; }
+        public DateTime orderDate { get; set; }
+        public DateTime? deliveryDate { get; set; }
+        public int noOfEggs { get; set; }
+        public decimal? amount { get; set; }
+        public string status { get; set; }
+        public Customer customer { get; set; }
+        
 
     }
 }

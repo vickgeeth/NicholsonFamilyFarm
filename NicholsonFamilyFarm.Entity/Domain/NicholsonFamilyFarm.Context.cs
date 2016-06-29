@@ -13,10 +13,10 @@ namespace NicholsonFamilyFarm.Entity.Domain
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NicholsonFarmEntities : DbContext
+    public partial class NicholsonFamilyFarmEntities : DbContext
     {
-        public NicholsonFarmEntities()
-            : base("name=NicholsonFarmEntities")
+        public NicholsonFamilyFarmEntities()
+            : base("name=NicholsonFamilyFarmEntities")
         {
         }
     
@@ -25,9 +25,8 @@ namespace NicholsonFamilyFarm.Entity.Domain
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Account> Accounts { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Inventory> Inventories { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
     }
 }

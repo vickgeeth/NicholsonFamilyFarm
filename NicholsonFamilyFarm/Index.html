@@ -6,12 +6,38 @@
     <script src="Scripts/jquery-1.10.2.js"></script>
     <script src="Scripts/bootstrap.js"></script>
 	<meta charset="utf-8" />
-    <script src="Scripts/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.3.js"></script>
     <script src="Scripts/angular-route.min.js"></script>
-    
+    <link href="Content/Site.css" rel="stylesheet" />
     <script src="Scripts/ui-grid.min.js"></script>
     <link href="Content/ui-grid.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/0.10.2/angular-chart.css" rel="stylesheet" />
+    <link href="http://victorbjelkholm.github.io/ngProgress/ngProgress.css" rel="stylesheet" />
+   
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap.js"></script>-->
+  <!--  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.5.7/angular-touch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
+    <script src="http://jtblin.github.io/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="https://rawgit.com/VictorBjelkholm/ngProgress/v1.1.2/build/ngprogress.min.js"></script>
+    <script src="Scripts/ng-file-upload.js"></script>
+    <script src="Scripts/ng-file-upload-shim.js"></script>
+
     <script src="Scripts/Custom/main.js"></script>
+    <script src="Scripts/Custom/Services/ServiceFactory.js"></script>
+    <script src="Scripts/Custom/Services/InventoryService.js"></script>
+    <script src="Scripts/Custom/Services/CustomerService.js"></script>
+    <script src="Scripts/Custom/Services/OrderService.js"></script>
+    <script src="Scripts/Custom/Services/ExpenseService.js"></script>
+    <script src="Scripts/Custom/Controllers/InventoryController.js"></script>
+    <script src="Scripts/Custom/Controllers/ReportController.js"></script>
+    <script src="Scripts/Custom/Controllers/OrderController.js"></script>
+    <script src="Scripts/Custom/Controllers/OrdersController.js"></script>
+    <script src="Scripts/Custom/Controllers/ExpenseController.js"></script>
+
 </head>
 <body ng-app="mainApp">
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -28,7 +54,7 @@
             <div id="navbar" class="collapse navbar-collapse">
 
                 <ul class="nav navbar-nav">
-                    <li><a href="#Inventory">Inventory</a></li>
+                    <li><a href="#inventory">Inventory</a></li>
                     <li class="dropdown">
                         <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Orders <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -36,11 +62,25 @@
                             <li><a href="#listOrders">List Orders</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown" ng-hide="true">
                         <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#addCustomer">Add New Customer</a></li>
                             <li><a href="#listCustomers">List Customers</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#inventoryReport">Inventory Report</a></li>
+                            <!--<li><a href="#listCustomers">List Customers</a></li>-->
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Expense <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#Expense">Add New Expense</a></li>
+                            <li><a href="#listExpenses">List Expenses</a></li>
                         </ul>
                     </li>
                    
@@ -60,10 +100,16 @@
             </div>
             <div class="col-md-10">
                 <div ng-view></div>
-                <script type="text/ng-template" id="listOrders">
+
+                <script type="text/ng-template" id="alert.html">
+                    <div class="alert" style="background-color:#fa39c3;color:white" role="alert">
+                        <div ng-transclude></div>
+                    </div>
+                </script>
+                <!--<script type="text/ng-template" id="listOrders">
                     List Orders
                     {{message}}
-                </script>
+                </script>-->
                 <script type="text/ng-template" id="listCustomers">
                     <div class="row">
                         <div class="col-md-12">
@@ -82,14 +128,14 @@
                                             <input type="text" id="lastName" ng-model="customer.lastName" placeholder="Last Name" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="facebookId">Facebook Id</label>
-                                            <input type="text" id="facebookId" ng-model="customer.facebook" placeholder="FaceBook Id" />
+                                            <label for="facebookId">Phone #</label>
+                                            <input type="text" id="phoneNo" ng-model="customer.phoneNo" placeholder="Phone #"  />
                                         </div>
                                         <div class="form-group">
                                             <label for="emailId">Email Id</label>
                                             <input type="text" id="emailId" ng-model="customer.email" placeholder="Email Id" />
                                         </div>
-                                        <button type="submit" class="btn btn-primary" ng-click="search()"><span class="glyphicon glyphicon-search"></span></button>
+                                        <button type="submit" class="btn btn-primary btn-sm" ng-click="search()">Search</button>
                                     </form>
                                 </div>
                             </div>
@@ -106,6 +152,7 @@
                     Add Orders
                     {{message}}
                 </script>
+                
             </div>
             <div class="col-md-1">
                 

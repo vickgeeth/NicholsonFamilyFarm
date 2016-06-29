@@ -14,11 +14,8 @@ namespace NicholsonFamilyFarm.Entity.Domain
     
     public partial class Inventory
     {
-        public int InventoryId { get; set; }
-        public System.DateTime Date { get; set; }
-        public int NoOfEggs { get; set; }
-        public int AccountId { get; set; }
-    
-        public virtual Account Account { get; set; }
+        public int Id { get; set; }
+        public System.DateTime CollectionDate { get; set; }
+        public int NoofEggs { get; set; }
     }
 }
